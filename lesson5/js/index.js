@@ -20,13 +20,14 @@ document.addEventListener('click', ({ offsetX, offsetY }) => {
     const hex = app.gameMap.find(item => item.x === hexCoordinates.x && item.y === hexCoordinates.y )
     if (hex.active) {
         player.move(hex)   
-        app.activeHex.pixi.destroy()   
+        clear() 
+        return  
     } else {
         clear()
     }
     if (hex.obj) {
-        //clear()
-        const activeHex = app.gameMap.hexesInRange(hexCoordinates ,  2 )
+        clear()
+        const activeHex = app.gameMap.hexesInRange(hexCoordinates ,  2 , false)
         activeHex.forEach(hex => {
             hex.active = true
         })
