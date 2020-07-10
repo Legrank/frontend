@@ -1,6 +1,6 @@
 export class App {
     constructor() {
-        this.renderer = new PIXI.Renderer({
+        this.renderer = new PIXI.CanvasRenderer({
             width: 1280,
             height: 720,
             backgroundColor: 0x1099bb,
