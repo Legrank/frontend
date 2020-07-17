@@ -1,12 +1,6 @@
 import {App} from './app.js'
-import {Draw} from './draw.js'
-import {Player} from './player.js'
-import {Entity} from './etity.js'
 
 const app = new App()
-const draw = new Draw(app)
-const player = new Player(app.gameMap[70])
-const chest = new Entity(app.gameMap[200])
 const entity = []
 //entity
 
@@ -42,15 +36,3 @@ document.addEventListener('click', ({ offsetX, offsetY }) => {
     
 })
 
-app.loader.load(initLevel)
-app.ticker.add(updateLevel)
-function updateLevel (delta) {
-    
-}
-
-function initLevel() {
-    document.body.appendChild(app.view)
-    app.stage.addChild(draw.hexMap(app.gameMap))
-    draw.gameObj(player)
-    draw.gameObj(chest)
-}
